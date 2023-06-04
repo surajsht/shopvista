@@ -1,0 +1,9 @@
+@use './variables' as *;
+
+@mixin mq($breakpoint) {
+  $size : map-get($breakpoints, $breakpoint);
+
+  @media (max-width: $size) {
+    @content;
+  }
+}

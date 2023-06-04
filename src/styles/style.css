@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  max-width: 1140px;
+}
+@media (max-width: 991px) {
+  .wrapper {
+    max-width: 906px;
+  }
+}
+@media (max-width: 767px) {
+  .wrapper {
+    max-width: 720px;
+  }
+}
+@media (max-width: 575px) {
+  .wrapper {
+    max-width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */

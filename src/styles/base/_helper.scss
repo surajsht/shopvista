@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+.wrapper {
+  max-width: 1140px;
+
+@include mq(md) {
+  max-width: 906px;
+}
+
+@include mq(sm) {
+  max-width: 720px;
+}
+
+@include mq(xs) {
+  max-width: 100%;
+}
+}

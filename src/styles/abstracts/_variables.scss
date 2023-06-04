@@ -1,0 +1,13 @@
+$font-family: 'Roboto',sans-serif;
+
+$global-font: 1.6rem;
+
+$global-line-height: calc($global-font * 1.6);
+
+$breakpoints: (
+  xs: 575px,
+  sm: 767px,
+  md: 991px,
+  lg: 1199px,
+  xl: 1400px,
+);
