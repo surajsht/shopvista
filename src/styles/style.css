@@ -4,6 +4,18 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:where(:hover, :focus) {
+  color: #0989ff;
+}
+
+ul li {
+  list-style: none;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -15,6 +27,7 @@ body {
 
 .wrapper {
   max-width: 1140px;
+  margin: 0 auto;
 }
 @media (max-width: 991px) {
   .wrapper {
@@ -30,4 +43,35 @@ body {
   .wrapper {
     max-width: 100%;
   }
+}
+
+.nav-content, .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+}
+
+.logo {
+  font-size: 2.8rem;
+  line-height: 2.64rem;
+  font-weight: 600;
+  color: #000;
+}
+.logo a:not(:hover, :focus) {
+  color: inherit;
+}
+
+.nav-links {
+  height: auto;
+  color: #000;
+}
+.nav-links li:not(:last-child) {
+  margin-right: 1.6rem;
+}
+.nav-links a:not(:hover, :focus) {
+  color: inherit;
+}
+.nav-links a.active {
+  color: #0989ff;
 }/*# sourceMappingURL=style.css.map */
