@@ -1,0 +1,41 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  color: #fff;
+  margin-top: -6rem;
+
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.hero-content {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  translate: -50% -50%;
+  height: auto;
+  width: 1140px;
+}
+
+.hero-title {
+  font-size: 7.3rem;
+  line-height: calc(7.3rem * 1.2);
+  margin-bottom: .8rem;
+}
+
+.hero-sub-title {
+  font-size: 4.6rem;
+  line-height: calc(4.6rem * 1.2);
+  margin-bottom: 3.2rem;
+}

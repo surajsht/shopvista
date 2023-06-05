@@ -1,10 +1,12 @@
 @use "../abstracts/" as *;
 
 .nav-content {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 6rem;
+  z-index: 1;
 }
 
 .logo {
@@ -32,6 +34,10 @@
   }
 
   a.active {
-    color: $hover-color;
+    color: $hover-color !important;
   }
+}
+
+.home :where(.logo, .nav-links) {
+  color: #fff;
 }

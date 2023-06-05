@@ -1,18 +1,18 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .wrapper {
   max-width: 1140px;
   margin: 0 auto;
 
-@include mq(md) {
-  max-width: 906px;
-}
+  @include mq(md) {
+    max-width: 906px;
+  }
 
-@include mq(sm) {
-  max-width: 720px;
-}
+  @include mq(sm) {
+    max-width: 720px;
+  }
 
-@include mq(xs) {
-  max-width: 90%;
-}
+  @include mq(xs) {
+    max-width: 90%;
+  }
 }

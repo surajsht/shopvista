@@ -46,10 +46,12 @@ body {
 }
 
 .nav-content, .nav-links {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 6rem;
+  z-index: 1;
 }
 
 .logo {
@@ -73,5 +75,74 @@ body {
   color: inherit;
 }
 .nav-links a.active {
-  color: #0989ff;
+  color: #0989ff !important;
+}
+
+.home :where(.logo, .nav-links) {
+  color: #fff;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  color: #fff;
+  margin-top: -6rem;
+}
+.hero::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.hero img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  translate: -50% -50%;
+  height: auto;
+  width: 1140px;
+}
+
+.hero-title {
+  font-size: 7.3rem;
+  line-height: 8.76rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero-sub-title {
+  font-size: 4.6rem;
+  line-height: 5.52rem;
+  margin-bottom: 3.2rem;
+}
+
+.primary-btn {
+  border: none;
+  outline: none;
+  height: 4rem;
+  width: 16rem;
+  font-size: 1.8rem;
+  line-height: 2.16rem;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.primary-btn:hover {
+  background-color: #0989ff;
+  border-color: #0989ff;
+}
+.primary-btn a {
+  color: inherit;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */

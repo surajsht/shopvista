@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+
+.primary-btn {
+  border: none;
+  outline: none;
+  height: 4rem;
+  width: 16rem;
+  font-size: 1.8rem;
+  line-height: calc(1.8rem * 1.2);
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+
+  &:hover {
+    background-color: $hover-color;
+    border-color: $hover-color;
+  }
+
+  a {
+    color: inherit;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
