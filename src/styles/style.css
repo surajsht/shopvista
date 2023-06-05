@@ -41,7 +41,7 @@ body {
 }
 @media (max-width: 575px) {
   .wrapper {
-    max-width: 100%;
+    max-width: 90%;
   }
 }
 
