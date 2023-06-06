@@ -1,10 +1,13 @@
 $font-family: "Roboto", sans-serif;
 
 $global-font: 1.6rem;
+$font-size-title: 2rem;
 
 $global-line-height: calc($global-font * 1.6);
+$title-line-height: calc($font-size-title * 1.2);
 
-$hover-color: #0989ff;
+$primary-color: #0989ff;
+$hover-color: #0071db;
 
 $breakpoints: (
   xs: 575px,

@@ -1,0 +1,29 @@
+.featured {
+  text-align: center;
+
+  .header-title {
+    font-size: 3.9rem;
+    line-height: calc(3.9rem * 1.2);
+    font-weight: 600;
+  }
+}
+
+.featured-body-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.featured-item {
+  img {
+    height: 32rem;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 1.6rem;
+  }
+
+  h2 {
+    margin-bottom: 0.8rem;
+  }
+}

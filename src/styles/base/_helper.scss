@@ -16,3 +16,19 @@
     max-width: 90%;
   }
 }
+
+.header-title {
+  margin-bottom: 6.4rem;
+}
+
+.shopvista-item-title {
+  font-size: $font-size-title;
+  line-height: $title-line-height;
+  font-weight: 500;
+}
+
+.shopvista-price {
+  font-size: $global-font;
+  line-height: calc($global-font * 1.2);
+  font-weight: 600;
+}

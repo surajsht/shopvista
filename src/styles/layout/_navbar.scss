@@ -13,31 +13,25 @@
   font-size: 2.8rem;
   line-height: calc(2.2rem * 1.2);
   font-weight: 600;
-  color: #000;
-
-  a:not(:hover, :focus) {
-    color: inherit;
-  }
 }
 
 .nav-links {
   @extend .nav-content;
   height: auto;
-  color: #000;
 
   li:not(:last-child) {
     margin-right: 1.6rem;
   }
 
-  a:not(:hover, :focus) {
-    color: inherit;
-  }
-
   a.active {
-    color: $hover-color !important;
+    color: $primary-color !important;
   }
 }
 
 .home :where(.logo, .nav-links) {
   color: #fff;
+
+  a:not(:hover, :focus) {
+    color: inherit;
+  }
 }

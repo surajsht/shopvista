@@ -1,4 +1,4 @@
-@use '../abstracts/' as *;
+@use "../abstracts/" as *;
 
 * {
   margin: 0;
@@ -8,10 +8,11 @@
 
 a {
   text-decoration: none;
+  color: #000;
 }
 
 a:where(:hover, :focus) {
-  color: $hover-color;
+  color: $primary-color;
 }
 
 ul li {
