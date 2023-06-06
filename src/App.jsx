@@ -5,6 +5,7 @@ import Product from "./pages/Product";
 import Single from "./pages/Single";
 import Error from "./pages/Error";
 import "./styles/style.css";
+import Cart from "./pages/Cart";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/product" element={<Product />} />
           <Route path="/product/:id" element={<Single />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
