@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Navbar from "../component/navbar/Navbar";
 import Hero from "../component/hero/Hero";
 import Featured from "../component/featured/Featured";
+import Skeleton from "../component/skeletonLoading/Skeleton";
 
 const Home = () => {
   useEffect(() => {
@@ -17,6 +18,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <Featured />
+      <Skeleton />
     </>
   );
 };

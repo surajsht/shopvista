@@ -1,25 +1,27 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import FeaturedItem from "./FeaturedItem";
 import { Link } from "react-router-dom";
-
-let URL = "https://fakestoreapi.com/products?limit=3";
+import { GlobalContext } from "../context/Context";
+import Skeleton from "../skeletonLoading/Skeleton";
 
 const Featured = () => {
-  let [fetchedData, setFetchedData] = useState([]);
+  let { fetchedData, loading } = useContext(GlobalContext);
 
-  let fetchFeatured = async () => {
-    try {
-      let response = await fetch(URL);
-      let data = await response.json();
-      setFetchedData(data);
-    } catch (e) {
-      console.error(e);
-    }
+  const FeaturedContent = () => {
+    return (
+      <div className="featured-body">
+        <div className="featured-body-content">
+          {fetchedData.map((data) => {
+            return <FeaturedItem key={data.id} data={data} />;
+          })}
+        </div>
+
+        <Link to="/product" className="secondary-btn">
+          All Products
+        </Link>
+      </div>
+    );
   };
-
-  useEffect(() => {
-    fetchFeatured();
-  }, []);
 
   return (
     <div className="featured">
@@ -28,17 +30,7 @@ const Featured = () => {
           <div className="header-title">Featured</div>
         </div>
 
-        <div className="featured-body">
-          <div className="featured-body-content">
-            {fetchedData.map((data) => {
-              return <FeaturedItem key={data.id} data={data} />;
-            })}
-          </div>
-
-          <Link to="/product" className="secondary-btn">
-            All Products
-          </Link>
-        </div>
+        {loading ? <Skeleton count={3} /> : FeaturedContent()}
       </div>
     </div>
   );

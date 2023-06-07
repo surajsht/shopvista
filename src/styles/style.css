@@ -166,7 +166,7 @@ body {
   font-weight: 600;
 }
 
-.featured-body-content {
+.featured-body-content, .skeleton-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.6rem;
@@ -182,4 +182,33 @@ body {
 }
 .featured-item h2 {
   margin-bottom: 0.8rem;
+}
+
+.skeleton-item .skeleton-image {
+  height: 32rem;
+  margin-bottom: 1.6rem;
+}
+.skeleton-item .skeleton-text {
+  display: block;
+  height: 2.4rem;
+  margin-bottom: 0.8rem;
+}
+.skeleton-item .skeleton-price {
+  height: 2rem;
+  width: 6rem;
+  margin: 0 auto;
+}
+.skeleton-item :where(.skeleton-image, .skeleton-text, .skeleton-price) {
+  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background-size: 200%;
+  animation: skeleton 1s infinite;
+}
+
+@keyframes skeleton {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
 }/*# sourceMappingURL=style.css.map */
