@@ -1,0 +1,40 @@
+@use "./featured" as *;
+
+.skeleton-content {
+  @extend .featured-body-content;
+}
+
+.skeleton-item {
+  .skeleton-image {
+    height: 32rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .skeleton-text {
+    display: block;
+    height: 2.4rem;
+    margin-bottom: .8rem;
+  }
+
+  .skeleton-price {
+    height: 2rem;
+    width: 6rem;
+    margin: 0 auto;
+  }
+
+  :where(.skeleton-image, .skeleton-text, .skeleton-price) {
+    background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+    background-size: 200%;
+    animation: skeleton 1s infinite;
+  }
+}
+
+@keyframes skeleton {
+  0% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}
