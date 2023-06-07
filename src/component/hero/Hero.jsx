@@ -4,7 +4,7 @@ import heroImage from "../../assets/hero-image.png";
 const Hero = () => {
   return (
     <div className="hero">
-      <img src={heroImage} alt="" />
+      <img src={heroImage} alt="hero-image" />
 
       <div className="hero-content">
         <h2 className="hero-title">Rest, Relax, Unwind</h2>

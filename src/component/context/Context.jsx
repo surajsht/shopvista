@@ -10,10 +10,10 @@ const Context = (props) => {
 
   let fetchFeatured = async () => {
     try {
-      setLoading(false);
       let response = await fetch(FeaturedUrl);
       let data = await response.json();
       setFetchedData(data);
+      setLoading(false);
     } catch (e) {
       console.error(e);
       setLoading(true);
