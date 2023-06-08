@@ -1,0 +1,25 @@
+.categories-title {
+  margin-bottom: 0.8rem;
+
+  h2 {
+    font-size: 1.8rem;
+    line-height: calc(1.8rem * 1.2);
+  }
+}
+
+.category-btns {
+  .button-item {
+    display: block;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    line-height: calc(1.4rem * 1.2);
+  }
+
+  .button-item:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}

@@ -16,7 +16,7 @@ const Featured = () => {
           })}
         </div>
 
-        <Link to="/product" className="secondary-btn">
+        <Link to="/shop" className="secondary-btn">
           All Products
         </Link>
       </div>

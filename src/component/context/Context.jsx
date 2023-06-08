@@ -3,10 +3,24 @@ import { useState, useEffect, createContext } from "react";
 let GlobalContext = createContext(null);
 
 let FeaturedUrl = "https://fakestoreapi.com/products?limit=3";
+let categoryUrl = "https://fakestoreapi.com/products/categories";
+let AllProductUrl = "https://fakestoreapi.com/products";
 
 const Context = (props) => {
+  let [allProduct, setAllProduct] = useState([]);
   let [fetchedData, setFetchedData] = useState([]);
+  let [categoryData, setCategoryData] = useState([]);
   let [loading, setLoading] = useState(true);
+
+  let fetchAllProduct = async () => {
+    try {
+      let response = await fetch(AllProductUrl);
+      let data = await response.json();
+      setAllProduct(data);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   let fetchFeatured = async () => {
     try {
@@ -20,11 +34,23 @@ const Context = (props) => {
     }
   };
 
+  let fetchCategory = async () => {
+    try {
+      let response = await fetch(categoryUrl);
+      let data = await response.json();
+      setCategoryData(data);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   useEffect(() => {
     fetchFeatured();
+    fetchCategory();
+    fetchAllProduct();
   }, []);
 
-  let contextValue = { fetchedData, loading };
+  let contextValue = { fetchedData, loading, categoryData, allProduct };
 
   return (
     <GlobalContext.Provider value={contextValue}>
