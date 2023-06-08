@@ -11,7 +11,7 @@ const Hero = () => {
 
         <h3 className="hero-sub-title"> Embrace your choices - we do </h3>
 
-        <Link to="/product" className="primary-btn">
+        <Link to="/shop" className="primary-btn">
           Shop Now
         </Link>
       </div>
