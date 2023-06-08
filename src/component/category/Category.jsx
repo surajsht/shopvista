@@ -3,7 +3,7 @@ import { GlobalContext } from "../context/Context";
 import CategoryItem from "./CategoryItem";
 
 const Category = () => {
-  let { categoryData } = useContext(GlobalContext);
+  let { categoryData, loading } = useContext(GlobalContext);
   let newCategory = ["all", ...categoryData];
 
   return (
@@ -12,7 +12,7 @@ const Category = () => {
         <h2> Categories </h2>
       </div>
       <div className="category-btns">
-        {newCategory.map((category, categoryId) => {
+        {!loading && newCategory.map((category, categoryId) => {
           return <CategoryItem key={categoryId} category={category} />;
         })}
       </div>

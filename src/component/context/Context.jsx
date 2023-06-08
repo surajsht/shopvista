@@ -41,8 +41,10 @@ const Context = (props) => {
       let response = await fetch(categoryUrl);
       let data = await response.json();
       setCategoryData(data);
+      setLoading(false);
     } catch (e) {
       console.error(e);
+      setLoading(true);
     }
   };
 
