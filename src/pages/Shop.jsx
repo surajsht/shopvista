@@ -17,14 +17,12 @@ const Shop = () => {
 
       <div className="wrapper">
         <div className="product">
-          <div>
+          <div className="filter">
             <Search />
             <Category />
           </div>
 
-          <div>
-            <Product />
-          </div>
+          <Product />
         </div>
       </div>
     </>

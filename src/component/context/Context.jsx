@@ -17,8 +17,10 @@ const Context = (props) => {
       let response = await fetch(AllProductUrl);
       let data = await response.json();
       setAllProduct(data);
+      setLoading(false);
     } catch (e) {
       console.error(e);
+      setLoading(true);
     }
   };
 
