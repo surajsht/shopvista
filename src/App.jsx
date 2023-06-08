@@ -7,11 +7,13 @@ import "./styles/style.css";
 import Cart from "./pages/Cart";
 import Context from "./component/context/Context";
 import Shop from "./pages/Shop";
+import ScrollToTop from "./component/scrolltotop/ScrollToTop";
 
 const App = () => {
   return (
     <Context>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Shared />}>
             <Route index element={<Home />} />
