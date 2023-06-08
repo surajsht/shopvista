@@ -1,3 +1,5 @@
+import StarIcon from "@mui/icons-material/Star";
+
 const ProductItem = ({ product }) => {
   let { title, price, image, rating, category } = product;
 
@@ -6,7 +8,9 @@ const ProductItem = ({ product }) => {
       <img src={image} alt={category} />
       <h2 className="shopvista-item-title">{title}</h2>
       <span className="shopvista-price">${price}</span>
-      <div className="shopvista-rating"></div>
+      <div className="shopvista-rating">
+        {StarIcon}
+      </div>
     </div>
   );
 };
