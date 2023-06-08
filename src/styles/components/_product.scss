@@ -1,0 +1,33 @@
+@use "./featured" as *;
+@use "../abstracts" as *;
+
+.product-container {
+  @extend .featured-body-content;
+}
+
+.product-item {
+  @extend .featured-item;
+
+  .shopvista-item-title {
+    @include line-clamp(2);
+    font-size: 1.6rem;
+    line-height: calc(1.6rem * 1.2);
+  }
+
+  .shopvista-price{
+    display: inline-block;
+    margin-bottom: .8rem;
+  }
+
+  .shopvista-rating {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    font-size: 1.4rem;
+    line-height: calc(1.4rem * 1.2);
+
+    svg {
+      fill: orange;
+    }
+  }
+}

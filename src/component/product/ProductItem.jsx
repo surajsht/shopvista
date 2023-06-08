@@ -1,15 +1,19 @@
 import StarIcon from "@mui/icons-material/Star";
+import { Link } from "react-router-dom";
 
 const ProductItem = ({ product }) => {
-  let { title, price, image, rating, category } = product;
+  let { id, title, price, image, rating, category } = product;
 
   return (
     <div className="product-item">
       <img src={image} alt={category} />
-      <h2 className="shopvista-item-title">{title}</h2>
+      <h2 className="shopvista-item-title">
+        <Link to={`/product/${id}`}>{title}</Link>
+      </h2>
       <span className="shopvista-price">${price}</span>
       <div className="shopvista-rating">
-        {StarIcon}
+        <StarIcon />
+        <span> ({rating.count}) </span>
       </div>
     </div>
   );

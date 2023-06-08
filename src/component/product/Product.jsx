@@ -6,7 +6,7 @@ const Product = () => {
   let { allProduct } = useContext(GlobalContext);
 
   return (
-    <div>
+    <div className="product-container">
       {allProduct.map((product) => {
         return <ProductItem key={product.id} product={product} />;
       })}
