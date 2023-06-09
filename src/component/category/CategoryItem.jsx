@@ -1,5 +1,10 @@
+import { useContext } from "react";
+import { GlobalContext } from "../context/Context";
+
 const CategoryItem = ({ category }) => {
-  return <button className="button-item">{category}</button>;
+  let { fetchCategoryData } = useContext(GlobalContext);
+
+  return <button className="button-item" onClick = {() => fetchCategoryData(category)}>{category}</button>;
 };
 
 export default CategoryItem;

@@ -48,13 +48,44 @@ const Context = (props) => {
     }
   };
 
+  const categoryUrls = {
+    all: AllProductUrl,
+    "men's clothing":
+      "https://fakestoreapi.com/products/category/men's%20clothing",
+    "women's clothing":
+      "https://fakestoreapi.com/products/category/women's%20clothing",
+    electronics: "https://fakestoreapi.com/products/category/electronics",
+    jewelery: "https://fakestoreapi.com/products/category/jewelery",
+  };
+
+  const fetchCategoryData = async (btnText) => {
+    const url = categoryUrls[btnText];
+
+    if (url) {
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        setAllProduct(data);
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  };
+
   useEffect(() => {
     fetchFeatured();
     fetchCategory();
     fetchAllProduct();
+    fetchCategoryData();
   }, []);
 
-  let contextValue = { fetchedData, loading, categoryData, allProduct };
+  let contextValue = {
+    fetchedData,
+    loading,
+    categoryData,
+    allProduct,
+    fetchCategoryData,
+  };
 
   return (
     <GlobalContext.Provider value={contextValue}>
