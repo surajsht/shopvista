@@ -4,7 +4,7 @@ import ProductItem from "./ProductItem";
 import Skeleton from "../skeletonLoading/Skeleton";
 
 const Product = () => {
-  let { allProduct, loading } = useContext(GlobalContext);
+  let { allProduct, productLoading } = useContext(GlobalContext);
 
   let getProducts = () => {
     return (
@@ -16,7 +16,7 @@ const Product = () => {
     );
   };
 
-  return <>{loading ? <Skeleton count={6} /> : getProducts()}</>;
+  return <>{productLoading ? <Skeleton count={6} /> : getProducts()}</>;
 };
 
 export default Product;

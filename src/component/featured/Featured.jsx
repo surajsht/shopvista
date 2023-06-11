@@ -5,7 +5,7 @@ import { GlobalContext } from "../context/Context";
 import Skeleton from "../skeletonLoading/Skeleton";
 
 const Featured = () => {
-  let { fetchedData, loading } = useContext(GlobalContext);
+  let { fetchedData, productLoading } = useContext(GlobalContext);
 
   const FeaturedContent = () => {
     return (
@@ -30,7 +30,7 @@ const Featured = () => {
           <div className="header-title">Featured</div>
         </div>
 
-        {loading ? <Skeleton count={3} /> : FeaturedContent()}
+        {productLoading ? <Skeleton count={3} /> : FeaturedContent()}
       </div>
     </div>
   );

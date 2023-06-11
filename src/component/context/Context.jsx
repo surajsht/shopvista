@@ -11,16 +11,17 @@ const Context = (props) => {
   let [fetchedData, setFetchedData] = useState([]);
   let [categoryData, setCategoryData] = useState([]);
   let [loading, setLoading] = useState(true);
+  let [productLoading, setProductLoading] = useState(true);
 
   let fetchAllProduct = async () => {
     try {
       let response = await fetch(AllProductUrl);
       let data = await response.json();
       setAllProduct(data);
-      setLoading(false);
+      setProductLoading(false);
     } catch (e) {
       console.error(e);
-      setLoading(true);
+      setProductLoading(true);
     }
   };
 
@@ -60,14 +61,16 @@ const Context = (props) => {
 
   const fetchCategoryData = async (btnText) => {
     const url = categoryUrls[btnText];
-
+    setProductLoading(true);
     if (url) {
       try {
         const response = await fetch(url);
         const data = await response.json();
         setAllProduct(data);
+        setProductLoading(false);
       } catch (e) {
         console.error(e);
+        setProductLoading(true);
       }
     }
   };
@@ -87,6 +90,7 @@ const Context = (props) => {
     categoryData,
     allProduct,
     fetchCategoryData,
+    productLoading,
   };
 
   return (
