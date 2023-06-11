@@ -23,7 +23,7 @@ const SingleProduct = () => {
 
   useEffect(() => {
     fetchSingleProduct();
-  }, []);
+  }, [id]);
 
   let { title, price, description, category, image, rating } = productData;
 
