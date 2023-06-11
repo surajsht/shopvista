@@ -72,6 +72,8 @@ const Context = (props) => {
     }
   };
 
+  // search filter
+
   useEffect(() => {
     fetchFeatured();
     fetchCategory();
