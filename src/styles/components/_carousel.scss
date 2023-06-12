@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+@use "./featured" as *;
+
+.carousel {
+  @extend .featured;
+}
+
+.carousel-item {
+  @extend .featured-item;
+  margin: 0 1.6rem;
+}

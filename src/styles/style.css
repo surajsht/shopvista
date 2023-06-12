@@ -47,7 +47,7 @@ body {
 }
 
 .header-title {
-  margin-bottom: 6.4rem;
+  margin-bottom: 4rem;
 }
 
 .shopvista-item-title {
@@ -157,10 +157,10 @@ body {
   border-color: #0071db;
 }
 
-.featured {
+.featured, .carousel {
   text-align: center;
 }
-.featured .header-title {
+.featured .header-title, .carousel .header-title {
   font-size: 3.9rem;
   line-height: 4.68rem;
   font-weight: 600;
@@ -173,15 +173,25 @@ body {
   margin-bottom: 1.6rem;
 }
 
-.featured-item img, .product-item img {
+.featured-item img, .carousel-item img, .product-item img {
   height: 32rem;
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
   margin-bottom: 1.6rem;
 }
-.featured-item h2, .product-item h2 {
+.featured-item h2, .carousel-item h2, .product-item h2 {
   margin-bottom: 0.8rem;
+  text-transform: lowercase;
+}
+.featured-item h2 a, .carousel-item h2 a, .product-item h2 a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.featured-item h2::first-letter, .carousel-item h2::first-letter, .product-item h2::first-letter {
+  text-transform: capitalize;
 }
 
 .skeleton-item .skeleton-image {
@@ -255,6 +265,10 @@ body {
 }
 .product-item .shopvista-rating svg {
   fill: orange;
+}
+
+.carousel-item {
+  margin: 0 1.6rem;
 }
 
 .shop nav {

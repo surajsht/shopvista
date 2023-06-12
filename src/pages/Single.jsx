@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Navbar from "../component/navbar/Navbar";
 import SingleProduct from "../component/single/SingleProduct";
 import Featured from "../component/featured/Featured";
+import Carousel from "../component/carousel/Carousel";
 
 const Single = () => {
   useEffect(() => {
@@ -19,6 +20,7 @@ const Single = () => {
         </div>
       </div>
       <Featured />
+      <Carousel />
     </>
   );
 };
