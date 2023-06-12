@@ -13,6 +13,7 @@ const Context = (props) => {
   let [categoryData, setCategoryData] = useState([]);
   let [carouselProductData, setCarouselProductData] = useState([]);
   let [loading, setLoading] = useState(true);
+  let [singleLoading, setSingleLoading] = useState(true);
   let [productLoading, setProductLoading] = useState(true);
 
   let fetchAllProduct = async () => {
@@ -28,14 +29,17 @@ const Context = (props) => {
   };
 
   let fetchFeatured = async () => {
+    setSingleLoading(true);
     try {
       let response = await fetch(FeaturedUrl);
       let data = await response.json();
       setFetchedData(data);
-      setLoading(false);
+      setProductLoading(false);
+      setSingleLoading(false);
     } catch (e) {
       console.error(e);
-      setLoading(true);
+      setProductLoading(true);
+      setSingleLoading(true);
     }
   };
 
@@ -79,15 +83,18 @@ const Context = (props) => {
 
   let carouselProduct = async () => {
     setProductLoading(true);
+    setSingleLoading(true);
     try {
       let response = await fetch(CarouselProduct);
       let data = await response.json();
       let newData = data.slice(10, 16);
       setCarouselProductData(newData);
       setProductLoading(false);
+      setSingleLoading(false);
     } catch (e) {
       console.error(e);
       setProductLoading(true);
+      setSingleLoading(true);
     }
   };
 
@@ -109,6 +116,8 @@ const Context = (props) => {
     fetchCategoryData,
     productLoading,
     carouselProductData,
+    singleLoading,
+    setSingleLoading,
   };
 
   return (

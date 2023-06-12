@@ -1,0 +1,71 @@
+@use "../pages" as *;
+
+.single-product-skeleton {
+  @extend .single-product-container;
+
+  .single-product-skeleton-image {
+    background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+    background-size: 200%;
+    animation: skeleton 1s infinite;
+  }
+}
+
+.single-product-skeleton-content {
+  span {
+    display: block;
+    background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+    background-size: 200%;
+    animation: skeleton 1s infinite;
+  }
+}
+
+@keyframes skeleton {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.single-product-skeleton-category {
+  height: 2rem;
+  width: 12rem;
+  margin-bottom: 1.6rem;
+}
+
+.single-product-skeleton-rating {
+  height: 2rem;
+  width: 8rem;
+  margin-bottom: 1.2rem;
+}
+
+.single-product-skeleton-title {
+  height: 6rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.single-product-skeleton-description {
+  height: 16rem;
+  width: 100%;
+  margin-bottom: 2.4rem;
+}
+
+.single-product-skeleton-price {
+  height: 2rem;
+  width: 8rem;
+  margin-bottom: 2.4rem;
+}
+
+.single-product-skeleton-quantity {
+  height: 3.2rem;
+  width: 16rem;
+  margin-bottom: 3.2rem;
+}
+
+.single-product-skeleton-button {
+  height: 4.8rem;
+  width: 24rem;
+}
