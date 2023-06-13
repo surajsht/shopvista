@@ -11,7 +11,8 @@ import { GlobalContext } from "../context/Context";
 const SingleProduct = () => {
   let [productData, setProductData] = useState([]);
 
-  let { singleLoading, setSingleLoading } = useContext(GlobalContext);
+  let { singleLoading, setSingleLoading, addToCart } =
+    useContext(GlobalContext);
 
   let { id } = useParams();
 
@@ -67,7 +68,7 @@ const SingleProduct = () => {
             </button>
           </div>
 
-          <button className="add-to-cart">
+          <button className="add-to-cart" onClick={() => addToCart(productData)}>
             <ShoppingCartIcon /> Add to cart
           </button>
         </div>

@@ -12,6 +12,7 @@ const Context = (props) => {
   let [fetchedData, setFetchedData] = useState([]);
   let [categoryData, setCategoryData] = useState([]);
   let [carouselProductData, setCarouselProductData] = useState([]);
+  let [cartItem, setCartItem] = useState([]);
   let [loading, setLoading] = useState(true);
   let [singleLoading, setSingleLoading] = useState(true);
   let [productLoading, setProductLoading] = useState(true);
@@ -98,6 +99,26 @@ const Context = (props) => {
     }
   };
 
+  let addToCart = (item) => {
+    setCartItem([...cartItem, item]);
+
+    let checkProduct = cartItem.find((data) => data.id === item.id);
+    console.log(checkProduct);
+
+    if (checkProduct) {
+      let updateCartQuantity = cartItem.map((data) => {
+        if (data.id === item.id) {
+          return { ...data, quantity: data.quantity + 1 };
+        }
+        return data;
+      });
+
+      setCartItem(updateCartQuantity);
+    } else {
+      setCartItem([...cartItem, { ...item, quantity: 1 }]);
+    }
+  };
+
   // search filter
 
   useEffect(() => {
@@ -118,6 +139,8 @@ const Context = (props) => {
     carouselProductData,
     singleLoading,
     setSingleLoading,
+    addToCart,
+    cartItem,
   };
 
   return (

@@ -83,6 +83,14 @@ body {
 .nav-links li:not(:last-child) {
   margin-right: 1.6rem;
 }
+.nav-links a {
+  display: flex;
+  align-items: center;
+}
+.nav-links a svg {
+  height: 2rem;
+  width: 2rem;
+}
 .nav-links a.active {
   color: #0989ff !important;
 }

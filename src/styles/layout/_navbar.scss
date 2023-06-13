@@ -23,6 +23,16 @@
     margin-right: 1.6rem;
   }
 
+  a {
+    display: flex;
+    align-items: center;
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+
   a.active {
     color: $primary-color !important;
   }
