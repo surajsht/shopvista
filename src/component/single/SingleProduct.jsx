@@ -53,21 +53,6 @@ const SingleProduct = () => {
           <p className="product-desc"> {description} </p>
           <span className="product-price"> ${price} </span>
 
-          <div className="product-quantity">
-            <span className="product-quantity-title"> Quantity </span>
-            <button className="product-btn decrease-product">
-              <RemoveIcon />
-            </button>
-            <input
-              type="number"
-              className="product-quantity-indicator"
-              value={"1"}
-            />
-            <button className="product-btn increase-product">
-              <AddIcon />
-            </button>
-          </div>
-
           <button className="add-to-cart" onClick={() => addToCart(productData)}>
             <ShoppingCartIcon /> Add to cart
           </button>

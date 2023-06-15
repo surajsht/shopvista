@@ -9,7 +9,6 @@ const SingleProductSkeletonLoading = () => {
         <span className="single-product-skeleton-title"></span>
         <span className="single-product-skeleton-description"></span>
         <span className="single-product-skeleton-price"></span>
-        <span className="single-product-skeleton-quantity"></span>
         <span className="single-product-skeleton-button"></span>
       </div>
     </div>
