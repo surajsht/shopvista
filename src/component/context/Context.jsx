@@ -103,7 +103,6 @@ const Context = (props) => {
     setCartItem([...cartItem, item]);
 
     let checkProduct = cartItem.find((data) => data.id === item.id);
-    console.log(checkProduct);
 
     if (checkProduct) {
       let updateCartQuantity = cartItem.map((data) => {

@@ -2,6 +2,8 @@ import Navbar from "../component/navbar/Navbar";
 import { useContext } from "react";
 import { GlobalContext } from "../component/context/Context";
 import CloseIcon from "@mui/icons-material/Close";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 const Cart = () => {
   let { cartItem } = useContext(GlobalContext);
@@ -18,11 +20,11 @@ const Cart = () => {
 
               <div className="cart-product-content">
                 <div className="product-content-header">
-                  <div> Items </div>
-                  <div> Unite Price </div>
-                  <div> Quantity </div>
-                  <div> Final Price </div>
-                  <div> Remove </div>
+                  <div className="product-content-item"> Items </div>
+                  <div className="product-content-unitPrice"> Unite Price </div>
+                  <div className="product-content-quantity"> Quantity </div>
+                  <div className="product-content-finalPrice">Final Price</div>
+                  <div className="product-content-remove"> Remove </div>
                 </div>
 
                 <div className="product-content-body">
@@ -30,8 +32,8 @@ const Cart = () => {
                     let { id, image, title, price, quantity } = item;
 
                     return (
-                      <div key={id}>
-                        <div>
+                      <div key={id} className="content-item-container">
+                        <div className="product-content-item">
                           <div className="cart-product-image">
                             <img src={image} alt={title} />
                           </div>
@@ -40,12 +42,28 @@ const Cart = () => {
                             <h2> {title} </h2>
                           </div>
                         </div>
-                        <div> {price} </div>
-                        <div> {quantity} </div>
-                        <div> {quantity * price} </div>
-                        <div>
-                          <CloseIcon />
+                        <div className="product-content-unitPrice">
+                          Rs. {price}
                         </div>
+                        <div className="product-content-quantity product-quantity">
+                          <button className="product-btn decrease-product">
+                            <RemoveIcon />
+                          </button>
+                          <input
+                            type="number"
+                            className="product-quantity-indicator"
+                            value={quantity}
+                          />
+                          <button className="product-btn increase-product">
+                            <AddIcon />
+                          </button>
+                        </div>
+                        <div className="product-content-finalPrice">
+                          Rs. {quantity * price}
+                        </div>
+                        <button className="product-content-remove">
+                          <CloseIcon />
+                        </button>
                       </div>
                     );
                   })}

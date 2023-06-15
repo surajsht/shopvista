@@ -1,0 +1,64 @@
+@use "../abstracts" as *;
+
+.cart-prodcut-title {
+  font-size: 2.8rem;
+  line-height: calc(2.8rem * 1.2);
+  margin-bottom: 8rem;
+}
+
+.product-content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  margin-bottom: 4rem;
+
+  .product-content-item {
+    width: 33.33%;
+  }
+
+  &
+    :where(
+      .product-content-unitPrice,
+      .product-content-quantity,
+      .product-content-finalPrice,
+      .product-content-remove
+    ) {
+    width: 16.66%;
+    text-align: center;
+  }
+}
+
+.content-item-container {
+  @extend .product-content-header;
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 3px solid #f3f3f3;
+
+  .product-content-item {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+
+    .cart-product-image {
+      height: 6rem;
+      width: 6rem;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .cart-product-title {
+      width: calc(100% - 6rem);
+      h2 {
+        font-size: 1.4rem;
+        line-height: calc(1.4rem * 1.2);
+        font-weight: 500;
+        @include line-clamp(2);
+      }
+    }
+  }
+}
