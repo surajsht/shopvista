@@ -4,9 +4,11 @@ import { GlobalContext } from "../component/context/Context";
 import CloseIcon from "@mui/icons-material/Close";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  let { cartItem } = useContext(GlobalContext);
+  let { cartItem, increaseCart, decreaseCart, removeCartItem } =
+    useContext(GlobalContext);
 
   return (
     <>
@@ -39,29 +41,45 @@ const Cart = () => {
                           </div>
 
                           <div className="cart-product-title">
-                            <h2> {title} </h2>
+                            <h2>
+                              <Link to={`/product/${id}`}> {title} </Link>
+                            </h2>
                           </div>
                         </div>
+
                         <div className="product-content-unitPrice">
                           Rs. {price}
                         </div>
+
                         <div className="product-content-quantity product-quantity">
-                          <button className="product-btn decrease-product">
+                          <button
+                            className="product-btn decrease-product"
+                            onClick={() => decreaseCart(item)}
+                          >
                             <RemoveIcon />
                           </button>
                           <input
                             type="number"
                             className="product-quantity-indicator"
                             value={quantity}
+                            onChange={(e) => e.preventDefault()}
                           />
-                          <button className="product-btn increase-product">
+                          <button
+                            className="product-btn increase-product"
+                            onClick={() => increaseCart(item)}
+                          >
                             <AddIcon />
                           </button>
                         </div>
+
                         <div className="product-content-finalPrice">
-                          Rs. {quantity * price}
+                          Rs. {(quantity * price).toFixed(2)}
                         </div>
-                        <button className="product-content-remove">
+
+                        <button
+                          className="product-content-remove"
+                          onClick={() => removeCartItem(item)}
+                        >
                           <CloseIcon />
                         </button>
                       </div>

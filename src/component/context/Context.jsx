@@ -100,25 +100,56 @@ const Context = (props) => {
   };
 
   let addToCart = (item) => {
-    setCartItem([...cartItem, item]);
-
     let checkProduct = cartItem.find((data) => data.id === item.id);
 
-    if (checkProduct) {
-      let updateCartQuantity = cartItem.map((data) => {
+    if (!checkProduct) {
+      setCartItem([...cartItem, { ...item, quantity: 1 }]);
+    }
+  };
+
+  const increaseCart = (item) => {
+    let findItem = cartItem.find((data) => data.id === item.id);
+
+    if (findItem) {
+      let updateCart = cartItem.map((data) => {
         if (data.id === item.id) {
           return { ...data, quantity: data.quantity + 1 };
         }
         return data;
       });
-
-      setCartItem(updateCartQuantity);
-    } else {
-      setCartItem([...cartItem, { ...item, quantity: 1 }]);
+      setCartItem(updateCart);
     }
   };
 
-  // search filter
+  const decreaseCart = (item) => {
+    let findItem = cartItem.find((data) => data.id === item.id);
+
+    if (findItem) {
+      let updateCart = cartItem.map((data) => {
+        if (data.id === item.id) {
+          // Decrease quantity by 1
+          const updatedQuantity = data.quantity - 1;
+
+          if (updatedQuantity <= 0) {
+            // Skip the item when the quantity becomes 0
+            return null;
+          }
+
+          return { ...data, quantity: updatedQuantity };
+        }
+        return data;
+      });
+
+      updateCart = updateCart.filter((item) => item !== null);
+
+      setCartItem(updateCart);
+    }
+  };
+
+  let removeCartItem = (item) => {
+    let filteredItem = cartItem.filter((data) => data.id != item.id);
+    setCartItem(filteredItem);
+  };
 
   useEffect(() => {
     fetchFeatured();
@@ -140,6 +171,9 @@ const Context = (props) => {
     setSingleLoading,
     addToCart,
     cartItem,
+    increaseCart,
+    decreaseCart,
+    removeCartItem,
   };
 
   return (
