@@ -13,6 +13,7 @@ const Context = (props) => {
   let [categoryData, setCategoryData] = useState([]);
   let [carouselProductData, setCarouselProductData] = useState([]);
   let [cartItem, setCartItem] = useState([]);
+  let [totalPrice, setTotalPrice] = useState(0);
   let [loading, setLoading] = useState(true);
   let [singleLoading, setSingleLoading] = useState(true);
   let [productLoading, setProductLoading] = useState(true);
@@ -159,6 +160,19 @@ const Context = (props) => {
     carouselProduct();
   }, []);
 
+  let getCartSummery = () => {
+    if (cartItem.length > 0) {
+      let getSubtotal = cartItem.reduce((acc, current) => {
+        return acc + current.price * current.quantity;
+      }, 0);
+      setTotalPrice(getSubtotal);
+    }
+  };
+
+  useEffect(() => {
+    getCartSummery();
+  }, [cartItem]);
+
   let contextValue = {
     fetchedData,
     loading,
@@ -174,6 +188,7 @@ const Context = (props) => {
     increaseCart,
     decreaseCart,
     removeCartItem,
+    totalPrice,
   };
 
   return (
