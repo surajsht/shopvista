@@ -1,5 +1,9 @@
 @use "../abstracts" as *;
 
+.cart nav {
+  margin-bottom: 6rem;
+}
+
 .cart-prodcut-title {
   font-size: 2.8rem;
   line-height: calc(2.8rem * 1.2);
@@ -12,6 +16,14 @@
   justify-content: space-between;
   gap: 1.6rem;
   margin-bottom: 4rem;
+  text-transform: uppercase;
+
+  & > div {
+    font-size: 1.4rem;
+    line-height: calc(1.4rem * 1.2);
+    font-weight: 500;
+    color: #999999;
+  }
 
   .product-content-item {
     width: 33.33%;
@@ -33,9 +45,17 @@
   @extend .product-content-header;
   margin-bottom: 1.6rem;
   padding-bottom: 1.6rem;
+  text-transform: none;
 
   &:not(:last-child) {
     border-bottom: 3px solid #f3f3f3;
+  }
+
+  & > div {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
   }
 
   .product-content-item {
@@ -132,5 +152,15 @@
       font-size: 1.8rem;
       line-height: calc(1.8rem * 1.2);
     }
+  }
+}
+
+.empty-cart {
+  text-align: center;
+
+  .empty-cart-title {
+    font-size: 3.2rem;
+    line-height: calc(3.2rem * 1.2);
+    margin-bottom: 3.2rem;
   }
 }
