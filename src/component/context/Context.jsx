@@ -14,6 +14,8 @@ const Context = (props) => {
   let [carouselProductData, setCarouselProductData] = useState([]);
   let [cartItem, setCartItem] = useState([]);
   let [totalPrice, setTotalPrice] = useState(0);
+  let [vatAmount, setVatAmount] = useState(0);
+  let [finalPrice, setFinalPrice] = useState(0);
   let [loading, setLoading] = useState(true);
   let [singleLoading, setSingleLoading] = useState(true);
   let [productLoading, setProductLoading] = useState(true);
@@ -165,7 +167,19 @@ const Context = (props) => {
       let getSubtotal = cartItem.reduce((acc, current) => {
         return acc + current.price * current.quantity;
       }, 0);
-      setTotalPrice(getSubtotal);
+      let totalPrice = getSubtotal.toFixed(2);
+      setTotalPrice(totalPrice);
+
+      let findVatAmount = (13 / 100) * totalPrice;
+      let vatAmount = findVatAmount.toFixed(2);
+      setVatAmount(vatAmount);
+
+      let findFinalPrice = Number(totalPrice) + Number(vatAmount);
+      setFinalPrice(findFinalPrice.toFixed(2));
+    } else {
+      setTotalPrice(0);
+      setVatAmount(0);
+      setFinalPrice(0);
     }
   };
 
@@ -189,6 +203,8 @@ const Context = (props) => {
     decreaseCart,
     removeCartItem,
     totalPrice,
+    vatAmount,
+    finalPrice,
   };
 
   return (

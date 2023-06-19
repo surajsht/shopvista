@@ -7,8 +7,15 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  let { cartItem, increaseCart, decreaseCart, removeCartItem, totalPrice } =
-    useContext(GlobalContext);
+  let {
+    cartItem,
+    increaseCart,
+    decreaseCart,
+    removeCartItem,
+    totalPrice,
+    vatAmount,
+    finalPrice,
+  } = useContext(GlobalContext);
 
   return (
     <>
@@ -99,12 +106,12 @@ const Cart = () => {
 
               <div className="cart-vat-cost">
                 <span className="vat-cost-label"> Vat (13%) : </span>
-                <span className="vat-cost-price"> Rs.1000 </span>
+                <span className="vat-cost-price">Rs.{vatAmount}</span>
               </div>
 
               <div className="cart-total-cost">
                 <span className="total-cost-label"> Total : </span>
-                <span className="total-cost-price"> Rs.1258 </span>
+                <span className="total-cost-price"> Rs.{finalPrice} </span>
               </div>
             </div>
           </div>

@@ -496,12 +496,6 @@ body {
   font-size: 1.8rem;
   line-height: 2.16rem;
 }
-.cart-product-total div:not(:last-child) {
-  margin-bottom: 1.6rem;
-}
-.cart-product-total .cart-total-title {
-  margin-bottom: 2.4rem;
-}
 
 .single-product-skeleton .single-product-skeleton-image {
   background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
